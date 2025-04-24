@@ -1,0 +1,89 @@
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  margin: 0;
+  padding: 0;
+
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+.login-page,
+.login-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-link {
+  color: #f90000;
+  font-size: 20px;
+  font-weight: bold;
+}
+.login-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.login-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.login-button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover {
+  background: #0056b3;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

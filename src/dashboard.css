@@ -1,0 +1,164 @@
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.hamburger-menu {
+    position: fixed; 
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1100; 
+    color: #333; 
+  }
+
+.drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.drawer.closed {
+  transform: translateX(-100%);
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.collapsible-section {
+  margin-bottom: 20px;
+}
+
+.collapsible-toggle {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.collapsible-toggle:hover {
+  background-color: #0056b3;
+}
+
+.section-content {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.logout-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+.main-content {
+  flex: 1; /* Allow the main content to expand */
+  padding: 20px;
+  background-color: #ffffff;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease; /* Smooth transition for resizing */
+}
+
+.drawer.open + .main-content {
+  margin-left: 250px; /* Push content to the right when the drawer is open */
+}
+
+.drawer.closed + .main-content {
+  margin-left: 0; /* Full width when the drawer is closed */
+}
+
+.main-content h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.main-content p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.color-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.color-button:hover {
+  background-color: #0056b3;
+}
+
+.dynamic-form {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.dynamic-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dynamic-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.dynamic-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dynamic-form button:hover {
+  background-color: #0056b3;
+}
