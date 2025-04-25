@@ -1,26 +1,30 @@
-import { Form, redirect, useActionData } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 
-export async function action({ request }) {
-  const formData = await request.formData();
-  const email = formData.get("email"); // Fixed missing quotes
-  const password = formData.get("password");
-
-  if (email === "ABC@gmail.com" && password === "ABC@gmail.com") {
-    return redirect("/dashboard");
-  }
-  return {
-    error: "Invalid Credentials",
-  };
-}
-
 export default function LoginPage() {
-  const actionData = useActionData();
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    if (email === "ABC@gmail.com" && password === "ABC@gmail.com") {
+      navigate("/dashboard");
+    } else {
+      setError("Invalid Credentials");
+    }
+  };
+
   return (
     <div className="login-page">
       <div className="login-container">
         <h1 className="login-title">Login</h1>
-        <Form method="post">
+        <form onSubmit={handleSubmit}>
           <div>
             <label>Email</label>
             <input name="email" type="email" className="login-input" required />
@@ -34,13 +38,11 @@ export default function LoginPage() {
               required
             />
           </div>
-          {actionData?.error && (
-            <p className="error-message">{actionData.error}</p> // Display error
-          )}
+          {error && <p className="error-message">{error}</p>}
           <button type="submit" className="login-button">
             Login
           </button>
-        </Form>
+        </form>
       </div>
     </div>
   );

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import "../dashboard.css";
 
 export default function Dashboard() {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false); // State to toggle drawer
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false); 
   const [isSection1Open, setIsSection1Open] = useState(false);
   const [isSection2Open, setIsSection2Open] = useState(false);
-  const [formColor, setFormColor] = useState("#ffffff"); // Default form color
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [formColor, setFormColor] = useState("#ffffff"); 
+  const navigate = useNavigate(); 
 
-  const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen); // Toggle drawer visibility
+  const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
   const toggleSection1 = () => setIsSection1Open(!isSection1Open);
   const toggleSection2 = () => setIsSection2Open(!isSection2Open);
 
@@ -18,17 +18,17 @@ export default function Dashboard() {
   };
 
   const handleLogout = () => {
-    navigate("/login"); // Redirect to the login page
+    navigate("/login"); 
   };
 
   return (
     <div className="dashboard-layout">
-      {/* Hamburger Menu */}
+    
       <button className="hamburger-menu" onClick={toggleDrawer}>
         ☰
       </button>
 
-      {/* Drawer Section */}
+   
       <div className={`drawer ${isDrawerOpen ? "open" : "closed"}`}>
         <h2 className="drawer-title">Dashboard</h2>
         <div className="collapsible-section">
@@ -85,7 +85,7 @@ export default function Dashboard() {
           </button>
         </div>
 
-        {/* Form with dynamic background color */}
+       
         <form
           className="dynamic-form"
           style={{ backgroundColor: formColor }}

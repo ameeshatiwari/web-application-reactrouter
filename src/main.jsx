@@ -1,34 +1,20 @@
-import { createRoot } from "react-dom/client";
-
+// index.jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LoginPage, { action as LoginAction } from "./routes/login.jsx";
+import LoginPage from "./routes/login.jsx";
 import Dashboard from "./routes/dashboard.jsx";
-
-const router = createBrowserRouter([
-  {
-    path: "/login",
-    element: <LoginPage />,
-    action: LoginAction,
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-  },
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "*",
-    element: <h1>404 - Page Not Found</h1>,
-  },
-]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
